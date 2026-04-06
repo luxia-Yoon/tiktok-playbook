@@ -53,6 +53,37 @@
   .last { page-break-before: always; display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 100vh; text-align: center; padding: 80px 60px; background: #111; margin: -50px -45px; width: calc(100% + 90px); }
   .copy { font-size: 8pt; color: #666; text-align: center; margin-top: 30px; font-style: italic; background: #111; padding: 20px 60px 40px 60px; }
 </style>
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+  
+  // CTA 클릭 추적
+  document.addEventListener('click', function(e) {
+    const link = e.target.closest('a');
+    if (link && link.href && link.href.includes('allsale.ai')) {
+      gtag('event', 'cta_click', {
+        event_category: 'engagement',
+        event_label: link.textContent.trim(),
+        transport_type: 'beacon'
+      });
+    }
+  });
+  
+  // 페이지 넘김 추적
+  const origNavigate = navigate;
+  window.navigate = function(dir) {
+    origNavigate(dir);
+    gtag('event', 'page_view_slide', {
+      event_category: 'engagement', 
+      event_label: 'page_' + (current + 1)
+    });
+  };
+</script>
 </head>
 <body>
 <div id="viewer">
