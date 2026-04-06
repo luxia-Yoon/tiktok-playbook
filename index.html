@@ -3,7 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <style>
-  @page { margin: 0; size: A4; } @media screen { body { max-width: 800px; margin: 0 auto; } }
+  @page { margin: 0; size: A4; } @media screen {
+  body { margin: 0; padding: 0; overflow: hidden; background: #f5f5f5; }
+  #viewer { width: 100vw; height: 100vh; overflow: hidden; position: relative; }
+  #pages-container { display: flex; transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1); height: 100%; }
+  .page { min-width: 100vw; height: 100vh; overflow-y: auto; padding: 50px 45px; background: #fff; box-sizing: border-box; }
+  .page.cover-page { padding: 0; }
+  .cover { min-height: 100vh; margin: 0; width: 100%; padding: 80px 60px; }
+  .last { min-height: 100vh; margin: 0; width: 100%; padding: 80px 60px; }
+  #nav { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 16px; background: rgba(0,0,0,0.8); padding: 10px 24px; border-radius: 40px; z-index: 100; }
+  #nav button { background: none; border: none; color: #fff; font-size: 20px; cursor: pointer; padding: 4px 12px; }
+  #nav button:hover { color: #60a5fa; }
+  #page-num { color: #999; font-size: 13px; min-width: 60px; text-align: center; }
+  h2, h3, table, .callout, .tpl, pre, ol, ul, p { max-width: 700px; }
+}
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { padding: 50px 45px; font-family: -apple-system, 'Pretendard', 'Apple SD Gothic Neo', sans-serif; color: #1a1a1a; line-height: 1.7; font-size: 10.5pt; }
   .cover { page-break-after: always; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; min-height: 100vh; padding: 100px 70px; background: #111; margin: -50px -45px; width: calc(100% + 90px); }
@@ -42,6 +55,8 @@
 </style>
 </head>
 <body>
+<div id="viewer">
+  <div id="pages-container"><div class="page cover-page">
 
 <!-- COVER -->
 <div class="cover">
@@ -67,7 +82,7 @@
 </ol>
 <hr>
 
-<div class="pb"></div>
+</div><div class="page">
 <h2>왜 TikTok Shop US인가?</h2>
 <p>TikTok Shop은 북미에서 가장 빠르게 성장하는 소셜 커머스 채널입니다.</p>
 <table>
@@ -86,9 +101,9 @@
 </table>
 <div class="callout t">P.Louise는 14시간 라이브로 $270만, Made by Mitchell은 24시간 만에 $100만. 핵심은 <strong>얼마나 많은 크리에이터가 당신의 제품을 팔고 있느냐</strong>입니다.</div>
 
-<div class="pb"></div>
+</div><div class="page">
 
-<div class="pb"></div>
+</div><div class="page">
 <!-- CH1 -->
 <h2><span class="sn">1</span> TikTok Shop US 계정 설정</h2>
 <p>계정 유형에 따라 <strong>배송 속도, 수수료율, 크리에이터 수락률</strong>이 모두 달라집니다.</p>
@@ -158,7 +173,7 @@
   <li>Shop Plan 커미션 최소 10%</li>
 </ol>
 
-<div class="pb"></div>
+</div><div class="page">
 
 <!-- CH2 -->
 <h2><span class="sn">2</span> 스토어프론트 최적화</h2>
@@ -218,7 +233,7 @@
 [타겟 고객 설명]</pre>
 <p><strong>영상</strong>: 전환율 3배. 15~30초, 스마트폰 OK, 자막 필수, 세로 9:16.</p>
 
-<div class="pb"></div>
+</div><div class="page">
 
 <!-- CH3 -->
 <h2><span class="sn">3</span> 가격 전략</h2>
@@ -270,7 +285,7 @@
 
 <div class="callout t">론칭 후 첫 2주는 Flash Deal로 판매량 부스트. 판매량이 검색 랭킹에서 가장 큰 영향.</div>
 
-<div class="pb"></div>
+</div><div class="page">
 
 <!-- CH4 -->
 <h2><span class="sn">4</span> 배송 및 풀필먼트</h2>
@@ -311,7 +326,7 @@
 <h3>US 3PL 파트너</h3>
 <p>ShipBob (공식 FBT 파트너), DCL Logistics, Shipfusion, Red Stag Fulfillment</p>
 
-<div class="pb"></div>
+</div><div class="page">
 
 <!-- CH5 -->
 <h2><span class="sn">5</span> 어필리에이트 프로그램 (핵심)</h2>
@@ -358,7 +373,7 @@
 <li>회수: 재구매 수익 + 이메일 목록 가치</li>
 </ul>
 
-<div class="pb"></div>
+</div><div class="page">
 <h3>어필리에이트 설정 절차</h3>
 <ol>
 <li>셀러 센터 → 마케팅 → 제휴 → 제휴 센터</li>
@@ -439,7 +454,7 @@ Fastmoss Product Category: Beauty, Followers 1K~500K로 500~1,000명 추출. <st
   <li>데이터 기반 지속 최적화</li>
 </ol>
 
-<div class="pb"></div>
+</div><div class="page">
 
 <!-- CH6 -->
 <h2><span class="sn">6</span> 샘플 발송 프로세스</h2>
@@ -462,7 +477,7 @@ Fastmoss Product Category: Beauty, Followers 1K~500K로 500~1,000명 추출. <st
   <tr><td>저렴한 패키징</td><td>깔끔한 포장 + 브랜드 카드</td></tr>
 </table>
 
-<div class="pb"></div>
+</div><div class="page">
 
 <!-- CH7 -->
 <h2><span class="sn">7</span> 오가닉 콘텐츠 & TikTok SEO</h2>
@@ -507,7 +522,7 @@ Fastmoss Product Category: Beauty, Followers 1K~500K로 500~1,000명 추출. <st
 <h3>해시태그</h3>
 <p>게시물당 3~5개: 1 트렌딩 + 1~2 틈새 + 1 제품 + 1 브랜드(선택). 2~3일마다 세트 로테이션.</p>
 
-<div class="pb"></div>
+</div><div class="page">
 
 <!-- CH8 -->
 <h2><span class="sn">8</span> 광고 전략</h2>
@@ -557,7 +572,7 @@ Fastmoss Product Category: Beauty, Followers 1K~500K로 500~1,000명 추출. <st
 <p><strong>Spark Ads</strong>: 오가닉 10K+ 영상을 $5~10/일로 부스팅. 원본 좋아요/댓글 유지.</p>
 <div class="callout w">GMV Max 학습 3~5일. 초반 ROAS 낮아도 끄지 마세요. 7일 후 2x 미만이면 소재 교체.</div>
 
-<div class="pb"></div>
+</div><div class="page">
 
 <!-- CH9 -->
 <h2><span class="sn">9</span> 성과 추적</h2>
@@ -588,7 +603,7 @@ Fastmoss Product Category: Beauty, Followers 1K~500K로 500~1,000명 추출. <st
   <li>다음 달 계획: 신규 50명 + 샘플 + 광고 예산</li>
 </ol>
 
-<div class="pb"></div>
+</div><div class="page">
 
 <!-- CH10 -->
 <h2><span class="sn">10</span> 실행 체크리스트</h2>
@@ -644,5 +659,47 @@ Fastmoss Product Category: Beauty, Followers 1K~500K로 500~1,000명 추출. <st
   &copy; 2026 ALLSALE. All rights reserved.</div>
 </div>
 
+</div></div>
+<div id="nav">
+  <button id="prev" onclick="navigate(-1)">&#8592;</button>
+  <span id="page-num">1 / ?</span>
+  <button id="next" onclick="navigate(1)">&#8594;</button>
+</div>
+<script>
+let current = 0;
+const container = document.getElementById('pages-container');
+const pages = document.querySelectorAll('.page');
+const pageNum = document.getElementById('page-num');
+const total = pages.length;
+
+function navigate(dir) {
+  current = Math.max(0, Math.min(total - 1, current + dir));
+  container.style.transform = 'translateX(-' + (current * 100) + 'vw)';
+  pageNum.textContent = (current + 1) + ' / ' + total;
+}
+
+// 키보드
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); navigate(1); }
+  if (e.key === 'ArrowLeft') { navigate(-1); }
+});
+
+// 터치 스와이프
+let touchStartX = 0;
+document.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; });
+document.addEventListener('touchend', e => {
+  const diff = touchStartX - e.changedTouches[0].clientX;
+  if (Math.abs(diff) > 50) navigate(diff > 0 ? 1 : -1);
+});
+
+// 마우스 휠
+document.addEventListener('wheel', e => {
+  if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
+    navigate(e.deltaX > 0 ? 1 : -1);
+  }
+}, { passive: true });
+
+pageNum.textContent = '1 / ' + total;
+</script>
 </body>
 </html>
