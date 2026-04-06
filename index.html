@@ -2,21 +2,47 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ALLSALE | TikTok Shop US 어필리에이트 플레이북</title>
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FLHRJE0F3F"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-FLHRJE0F3F');
+</script>
+
 <style>
-  @page { margin: 0; size: A4; } @media screen {
-  body { margin: 0; padding: 0; overflow: hidden; background: #f5f5f5; }
-  #viewer { width: 100vw; height: 100vh; overflow: hidden; position: relative; }
-  #pages-container { display: flex; transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1); height: 100%; }
-  .page { min-width: 100vw; height: 100vh; overflow-y: auto; padding: 50px 45px; background: #fff; box-sizing: border-box; }
-  .page.cover-page { padding: 0; }
-  .cover { min-height: 100vh; margin: 0; width: 100%; padding: 80px 60px; }
-  .last { min-height: 100vh; margin: 0; width: 100%; padding: 80px 60px; }
-  #nav { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 16px; background: rgba(0,0,0,0.8); padding: 10px 24px; border-radius: 40px; z-index: 100; }
-  #nav button { background: none; border: none; color: #fff; font-size: 20px; cursor: pointer; padding: 4px 12px; }
-  #nav button:hover { color: #60a5fa; }
-  #page-num { color: #999; font-size: 13px; min-width: 60px; text-align: center; }
-  h2, h3, table, .callout, .tpl, pre, ol, ul, p { max-width: 700px; }
-}
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, 'Pretendard', sans-serif; background: #f0f0f0; overflow: hidden; height: 100vh; }
+  
+  /* Header */
+  .header { position: fixed; top: 0; left: 0; right: 0; height: 52px; background: #fff; border-bottom: 1px solid #e5e5e5; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; z-index: 100; }
+  .header .logo { font-size: 15px; font-weight: 700; color: #111; letter-spacing: -0.3px; }
+  .header .page-info { font-size: 13px; color: #999; }
+  
+  /* Viewer */
+  .viewer { position: fixed; top: 52px; left: 0; right: 0; bottom: 0; display: flex; align-items: center; justify-content: center; }
+  
+  /* Slide container */
+  .slide-wrapper { position: relative; width: 680px; height: calc(100vh - 92px); max-height: 880px; }
+  .slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: #fff; border-radius: 4px; box-shadow: 0 2px 20px rgba(0,0,0,0.1); overflow-y: auto; padding: 48px 52px; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
+  .slide.active { opacity: 1; pointer-events: auto; }
+  .slide.dark { background: #111; padding: 0; }
+  .slide.dark .slide-inner { padding: 60px 52px; min-height: 100%; display: flex; flex-direction: column; justify-content: center; }
+  
+  /* Nav arrows */
+  .nav-arrow { position: fixed; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; border-radius: 50%; background: #fff; border: 1px solid #e0e0e0; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 18px; color: #666; z-index: 50; transition: all 0.2s; }
+  .nav-arrow:hover { background: #f5f5f5; color: #111; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+  .nav-arrow.left { left: 24px; }
+  .nav-arrow.right { right: 24px; }
+  .nav-arrow.disabled { opacity: 0.3; pointer-events: none; }
+  
+  /* Content styles */
+  
+  @page { margin: 0; size: A4; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { padding: 50px 45px; font-family: -apple-system, 'Pretendard', 'Apple SD Gothic Neo', sans-serif; color: #1a1a1a; line-height: 1.7; font-size: 10.5pt; }
   .cover { page-break-after: always; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; min-height: 100vh; padding: 100px 70px; background: #111; margin: -50px -45px; width: calc(100% + 90px); }
@@ -52,44 +78,50 @@
   pre { background: #f8f9fa; border: 1px solid #e5e7eb; border-radius: 6px; padding: 12px 16px; font-size: 8.5pt; font-family: monospace; margin: 10px 0; white-space: pre-wrap; }
   .last { page-break-before: always; display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 100vh; text-align: center; padding: 80px 60px; background: #111; margin: -50px -45px; width: calc(100% + 90px); }
   .copy { font-size: 8pt; color: #666; text-align: center; margin-top: 30px; font-style: italic; background: #111; padding: 20px 60px 40px 60px; }
-</style>
 
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-FLHRJE0F3F"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-FLHRJE0F3F');
   
-  // CTA 클릭 추적
-  document.addEventListener('click', function(e) {
-    const link = e.target.closest('a');
-    if (link && link.href && link.href.includes('allsale.ai')) {
-      gtag('event', 'cta_click', {
-        event_category: 'engagement',
-        event_label: link.textContent.trim(),
-        transport_type: 'beacon'
-      });
-    }
-  });
+  /* Override for viewer */
+  @page { margin: 0; }
+  .cover { min-height: auto; margin: 0; width: auto; padding: 0; background: transparent; page-break-after: auto; }
+  .last { min-height: auto; margin: 0; width: auto; padding: 0; background: transparent; page-break-before: auto; }
+  h2 { font-size: 15pt; margin: 28px 0 10px 0; }
+  h3 { font-size: 11pt; margin: 20px 0 6px 0; }
+  table { font-size: 8.5pt; }
+  th { font-size: 8pt; padding: 6px 8px; }
+  td { padding: 5px 8px; }
+  .callout { font-size: 9pt; padding: 10px 14px; margin: 10px 0; }
+  .tpl { font-size: 9pt; padding: 10px 14px; }
+  pre { font-size: 8pt; padding: 10px 14px; }
+  ol, ul { font-size: 9.5pt; }
+  li { font-size: 9.5pt; margin-bottom: 3px; }
+  p { font-size: 10pt; margin-bottom: 8px; }
+  .sn { width: 22px; height: 22px; line-height: 22px; font-size: 10pt; }
+  .cl li { font-size: 9pt; }
   
-  // 페이지 넘김 추적
-  const origNavigate = navigate;
-  window.navigate = function(dir) {
-    origNavigate(dir);
-    gtag('event', 'page_view_slide', {
-      event_category: 'engagement', 
-      event_label: 'page_' + (current + 1)
-    });
-  };
-</script>
+  /* Mobile */
+  @media (max-width: 768px) {
+    .slide-wrapper { width: 100%; height: calc(100vh - 52px); max-height: none; }
+    .slide { border-radius: 0; padding: 32px 24px; }
+    .slide.dark .slide-inner { padding: 40px 24px; }
+    .nav-arrow { display: none; }
+    h2 { font-size: 13pt; }
+    table { font-size: 7.5pt; }
+  }
+</style>
 </head>
 <body>
-<div id="viewer">
-  <div id="pages-container"><div class="page cover-page">
 
-<!-- COVER -->
+<div class="header">
+  <div class="logo">ALLSALE</div>
+  <div class="page-info" id="pageInfo">1 / 13</div>
+</div>
+
+<div class="viewer">
+  <div class="nav-arrow left" id="prevBtn" onclick="nav(-1)">&#8249;</div>
+  
+  <div class="slide-wrapper">
+    <div class="slide active dark" data-page="0">
+      <div class="slide-inner"><!-- COVER -->
 <div class="cover">
   <div class="cover-badge">ALLSALE PLAYBOOK</div>
   <h1>TikTok Shop US<br>어필리에이트<br>플레이북</h1>
@@ -111,10 +143,9 @@
   <li>성과 추적</li>
   <li>실행 체크리스트</li>
 </ol>
-<hr>
-
-</div><div class="page">
-<h2>왜 TikTok Shop US인가?</h2>
+<hr></div>
+    </div>
+    <div class="slide" data-page="1"><h2>왜 TikTok Shop US인가?</h2>
 <p>TikTok Shop은 북미에서 가장 빠르게 성장하는 소셜 커머스 채널입니다.</p>
 <table>
   <tr><th>지표</th><th>수치</th><th>출처</th></tr>
@@ -130,12 +161,8 @@
   <tr><td>성별</td><td>70~75% 여성</td></tr>
   <tr><td>충동구매</td><td>25%가 인정</td></tr>
 </table>
-<div class="callout t">P.Louise는 14시간 라이브로 $270만, Made by Mitchell은 24시간 만에 $100만. 핵심은 <strong>얼마나 많은 크리에이터가 당신의 제품을 팔고 있느냐</strong>입니다.</div>
-
-</div><div class="page">
-
-</div><div class="page">
-<!-- CH1 -->
+<div class="callout t">P.Louise는 14시간 라이브로 $270만, Made by Mitchell은 24시간 만에 $100만. 핵심은 <strong>얼마나 많은 크리에이터가 당신의 제품을 팔고 있느냐</strong>입니다.</div></div>
+    <div class="slide" data-page="2"><!-- CH1 -->
 <h2><span class="sn">1</span> TikTok Shop US 계정 설정</h2>
 <p>계정 유형에 따라 <strong>배송 속도, 수수료율, 크리에이터 수락률</strong>이 모두 달라집니다.</p>
 <h3>셀러 유형 비교</h3>
@@ -202,11 +229,8 @@
   <li>반품 주소 설정 (Shop Setting)</li>
   <li>배송 템플릿 3~5일</li>
   <li>Shop Plan 커미션 최소 10%</li>
-</ol>
-
-</div><div class="page">
-
-<!-- CH2 -->
+</ol></div>
+    <div class="slide" data-page="3"><!-- CH2 -->
 <h2><span class="sn">2</span> 스토어프론트 최적화</h2>
 <p>상품 페이지는 크리에이터가 제품을 팔지 판단하는 첫 번째 기준입니다.</p>
 
@@ -262,11 +286,8 @@
 
 이런 분들께 추천:
 [타겟 고객 설명]</pre>
-<p><strong>영상</strong>: 전환율 3배. 15~30초, 스마트폰 OK, 자막 필수, 세로 9:16.</p>
-
-</div><div class="page">
-
-<!-- CH3 -->
+<p><strong>영상</strong>: 전환율 3배. 15~30초, 스마트폰 OK, 자막 필수, 세로 9:16.</p></div>
+    <div class="slide" data-page="4"><!-- CH3 -->
 <h2><span class="sn">3</span> 가격 전략</h2>
 <h3>US 수수료 (TikTok 공식, 2025 Q1)</h3>
 <table>
@@ -314,11 +335,8 @@
 </ul>
 <p><strong>마진 보호 규칙</strong>: (2 × CAC + COGS) &lt; AOV. AOV $120 미만이면 $150~200 번들에 집중.</p>
 
-<div class="callout t">론칭 후 첫 2주는 Flash Deal로 판매량 부스트. 판매량이 검색 랭킹에서 가장 큰 영향.</div>
-
-</div><div class="page">
-
-<!-- CH4 -->
+<div class="callout t">론칭 후 첫 2주는 Flash Deal로 판매량 부스트. 판매량이 검색 랭킹에서 가장 큰 영향.</div></div>
+    <div class="slide" data-page="5"><!-- CH4 -->
 <h2><span class="sn">4</span> 배송 및 풀필먼트</h2>
 <p>"3일 무료 배송" 배지(FBT)는 조회수 <strong>30%+</strong>, 전환율 <strong>15~20%</strong> 증가.</p>
 
@@ -355,11 +373,8 @@
 <p><strong>필수 발송 시간</strong>: 표준 주문 1~2 영업일. 지연 시 경고 → 주문 제한 → 계정 제한.</p>
 
 <h3>US 3PL 파트너</h3>
-<p>ShipBob (공식 FBT 파트너), DCL Logistics, Shipfusion, Red Stag Fulfillment</p>
-
-</div><div class="page">
-
-<!-- CH5 -->
+<p>ShipBob (공식 FBT 파트너), DCL Logistics, Shipfusion, Red Stag Fulfillment</p></div>
+    <div class="slide" data-page="6"><!-- CH5 -->
 <h2><span class="sn">5</span> 어필리에이트 프로그램 (핵심)</h2>
 <p>TikTok Shop US 매출의 <strong>60~80%</strong>가 어필리에이트에서 발생. <strong>크리에이터 수 = 매출</strong>.</p>
 
@@ -402,10 +417,8 @@
 <li>근거: 수수료를 고객 획득 비용(CAC)으로 취급</li>
 <li>첫 구매는 손익분기점 또는 손실</li>
 <li>회수: 재구매 수익 + 이메일 목록 가치</li>
-</ul>
-
-</div><div class="page">
-<h3>어필리에이트 설정 절차</h3>
+</ul></div>
+    <div class="slide" data-page="7"><h3>어필리에이트 설정 절차</h3>
 <ol>
 <li>셀러 센터 → 마케팅 → 제휴 → 제휴 센터</li>
 <li>공개 협업 → 제품 관리 → "제품 추가"</li>
@@ -483,11 +496,8 @@ Fastmoss Product Category: Beauty, Followers 1K~500K로 500~1,000명 추출. <st
   <li>반복 가능한 시스템 (모집→샘플→후속)</li>
   <li>거래가 아닌 관계에 투자</li>
   <li>데이터 기반 지속 최적화</li>
-</ol>
-
-</div><div class="page">
-
-<!-- CH6 -->
+</ol></div>
+    <div class="slide" data-page="8"><!-- CH6 -->
 <h2><span class="sn">6</span> 샘플 발송 프로세스</h2>
 <table>
   <tr><th>시점</th><th>액션</th></tr>
@@ -506,11 +516,8 @@ Fastmoss Product Category: Beauty, Followers 1K~500K로 500~1,000명 추출. <st
   <tr><td>트래킹 미공유</td><td>발송 즉시 DM</td></tr>
   <tr><td>리마인드 안 함</td><td>7일 후 가벼운 메시지</td></tr>
   <tr><td>저렴한 패키징</td><td>깔끔한 포장 + 브랜드 카드</td></tr>
-</table>
-
-</div><div class="page">
-
-<!-- CH7 -->
+</table></div>
+    <div class="slide" data-page="9"><!-- CH7 -->
 <h2><span class="sn">7</span> 오가닉 콘텐츠 & TikTok SEO</h2>
 <p>18~24세 64%가 TikTok을 검색 엔진으로 사용. FYP 상품 카드가 매출의 <strong>70~80%</strong>.</p>
 
@@ -551,11 +558,8 @@ Fastmoss Product Category: Beauty, Followers 1K~500K로 500~1,000명 추출. <st
 아래에서 베스트셀러 쇼핑하기 👇</pre>
 
 <h3>해시태그</h3>
-<p>게시물당 3~5개: 1 트렌딩 + 1~2 틈새 + 1 제품 + 1 브랜드(선택). 2~3일마다 세트 로테이션.</p>
-
-</div><div class="page">
-
-<!-- CH8 -->
+<p>게시물당 3~5개: 1 트렌딩 + 1~2 틈새 + 1 제품 + 1 브랜드(선택). 2~3일마다 세트 로테이션.</p></div>
+    <div class="slide" data-page="10"><!-- CH8 -->
 <h2><span class="sn">8</span> 광고 전략</h2>
 <div class="callout g"><strong>시작 조건</strong>: 크리에이터 20명+, 오가닉 월 $1,000+, 성과 영상 3개+, 리뷰 5개+</div>
 
@@ -601,11 +605,8 @@ Fastmoss Product Category: Beauty, Followers 1K~500K로 500~1,000명 추출. <st
 </ul>
 <h3>Spark Ads</h3>
 <p><strong>Spark Ads</strong>: 오가닉 10K+ 영상을 $5~10/일로 부스팅. 원본 좋아요/댓글 유지.</p>
-<div class="callout w">GMV Max 학습 3~5일. 초반 ROAS 낮아도 끄지 마세요. 7일 후 2x 미만이면 소재 교체.</div>
-
-</div><div class="page">
-
-<!-- CH9 -->
+<div class="callout w">GMV Max 학습 3~5일. 초반 ROAS 낮아도 끄지 마세요. 7일 후 2x 미만이면 소재 교체.</div></div>
+    <div class="slide" data-page="11"><!-- CH9 -->
 <h2><span class="sn">9</span> 성과 추적</h2>
 <table>
   <tr><th>지표</th><th>목표</th><th>측정</th></tr>
@@ -632,11 +633,9 @@ Fastmoss Product Category: Beauty, Followers 1K~500K로 500~1,000명 추출. <st
   <li>바이럴 분석: 상위 3개 후킹 포인트 → 공유</li>
   <li>경쟁사 모니터링 (Fastmoss)</li>
   <li>다음 달 계획: 신규 50명 + 샘플 + 광고 예산</li>
-</ol>
-
-</div><div class="page">
-
-<!-- CH10 -->
+</ol></div>
+    <div class="slide dark" data-page="12">
+      <div class="slide-inner"><!-- CH10 -->
 <h2><span class="sn">10</span> 실행 체크리스트</h2>
 <h3>Week 1: 기초 세팅</h3>
 <ul class="cl">
@@ -682,55 +681,71 @@ Fastmoss Product Category: Beauty, Followers 1K~500K로 500~1,000명 추출. <st
   <div style="font-size:11px;font-weight:600;color:#60a5fa;letter-spacing:2px;text-transform:uppercase;margin-bottom:20px;">ALLSALE</div>
   <h2 style="font-size:26pt;font-weight:800;color:#fff;border:none;margin-bottom:16px;line-height:1.3;">크리에이터 관리에 쓰는 시간,<br>매출을 만드는 시간으로<br>바꾸세요.</h2>
   <p style="font-size:12pt;color:#999;max-width:440px;margin-bottom:36px;line-height:1.7;">당신이 엑셀과 DM 사이를 오가는 동안,<br>경쟁 브랜드는 이미 다음 크리에이터를 확보하고 있습니다.</p>
-  <a href="https://www.allsale.ai" target="_blank" style="display:inline-block;background:#fff;color:#111;padding:14px 44px;border-radius:8px;font-size:13pt;font-weight:700;margin-bottom:14px;text-decoration:none;">무료 체험 시작하기</a>
+  <div style="background:#fff;color:#111;padding:14px 44px;border-radius:8px;font-size:13pt;font-weight:700;margin-bottom:14px;">무료 체험 시작하기</div>
   <a href="https://www.allsale.ai" style="font-size:12pt;color:#60a5fa;text-decoration:none;font-weight:600;">www.allsale.ai</a>
   <div style="margin-top:60px;font-size:7.5pt;color:#555;font-style:italic;">
   본 자료의 저작권은 ALLSALE에 있으며, 무단 복제, 2차 가공, 외부 유출을 금지합니다.<br>
   본 자료는 수신자 본인만 열람 가능하며, 제3자에게 공유할 수 없습니다.<br>
   &copy; 2026 ALLSALE. All rights reserved.</div>
+</div></div>
+    </div>
+
+  </div>
+  
+  <div class="nav-arrow right" id="nextBtn" onclick="nav(1)">&#8250;</div>
 </div>
 
-</div></div>
-<div id="nav">
-  <button id="prev" onclick="navigate(-1)">&#8592;</button>
-  <span id="page-num">1 / ?</span>
-  <button id="next" onclick="navigate(1)">&#8594;</button>
-</div>
 <script>
 let current = 0;
-const container = document.getElementById('pages-container');
-const pages = document.querySelectorAll('.page');
-const pageNum = document.getElementById('page-num');
-const total = pages.length;
+const slides = document.querySelectorAll('.slide');
+const total = slides.length;
+const pageInfo = document.getElementById('pageInfo');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
 
-function navigate(dir) {
+function nav(dir) {
+  slides[current].classList.remove('active');
   current = Math.max(0, Math.min(total - 1, current + dir));
-  container.style.transform = 'translateX(-' + (current * 100) + 'vw)';
-  pageNum.textContent = (current + 1) + ' / ' + total;
+  slides[current].classList.add('active');
+  slides[current].scrollTop = 0;
+  pageInfo.textContent = (current + 1) + ' / ' + total;
+  prevBtn.classList.toggle('disabled', current === 0);
+  nextBtn.classList.toggle('disabled', current === total - 1);
+  
+  gtag('event', 'page_view_slide', {
+    event_category: 'engagement',
+    event_label: 'page_' + (current + 1)
+  });
 }
 
-// 키보드
+// Keyboard
 document.addEventListener('keydown', e => {
-  if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); navigate(1); }
-  if (e.key === 'ArrowLeft') { navigate(-1); }
+  if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); nav(1); }
+  if (e.key === 'ArrowLeft') nav(-1);
 });
 
-// 터치 스와이프
-let touchStartX = 0;
-document.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; });
+// Touch swipe
+let touchX = 0;
+document.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; });
 document.addEventListener('touchend', e => {
-  const diff = touchStartX - e.changedTouches[0].clientX;
-  if (Math.abs(diff) > 50) navigate(diff > 0 ? 1 : -1);
+  const diff = touchX - e.changedTouches[0].clientX;
+  if (Math.abs(diff) > 50) nav(diff > 0 ? 1 : -1);
 });
 
-// 마우스 휠
-document.addEventListener('wheel', e => {
-  if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
-    navigate(e.deltaX > 0 ? 1 : -1);
+// CTA click tracking
+document.addEventListener('click', e => {
+  const link = e.target.closest('a');
+  if (link && link.href && link.href.includes('allsale.ai')) {
+    gtag('event', 'cta_click', {
+      event_category: 'engagement',
+      event_label: link.textContent.trim(),
+      transport_type: 'beacon'
+    });
   }
-}, { passive: true });
+});
 
-pageNum.textContent = '1 / ' + total;
+prevBtn.classList.add('disabled');
 </script>
+
 </body>
 </html>
